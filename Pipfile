@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+imaplib2 = ">=3.6"
+email-validator = ">=2.0.0"
+python-dateutil = ">=2.8.2"
+langchain = "*"
+langchain-openai = "*"
+python-dotenv = "*"
+openai = "*"
+langchain-pinecone = "*"
+pinecone-client = "*"
+
+[requires]
+python_version = "3" 
+
+[dev-packages]
