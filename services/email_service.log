@@ -1,0 +1,101 @@
+2025-05-14 12:48:57,501 - services/email_service - INFO - Database initialized successfully
+2025-05-14 12:48:59,220 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-14 12:49:00,371 - services/email_service - INFO - Found 26 emails since 13-May-2025
+2025-05-14 12:49:12,464 - services/email_service - INFO - Processed batch 1/1
+2025-05-14 12:49:13,740 - services/email_service - INFO - Email fetch and processing completed
+2025-05-14 13:52:24,376 - services/email_service - INFO - Database tables cleared successfully
+2025-05-14 13:54:00,536 - services/email_service - INFO - Database initialized successfully
+2025-05-14 13:54:02,132 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-14 13:54:02,679 - services/email_service - INFO - Found 11 emails since 14-May-2025
+2025-05-14 13:54:05,161 - services/email_service - INFO - Processed batch 1/1
+2025-05-14 13:54:05,589 - services/email_service - INFO - Email fetch and processing completed
+2025-05-14 13:55:27,485 - services/email_service - INFO - Database initialized successfully
+2025-05-14 13:55:54,339 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-14 13:55:54,900 - services/email_service - INFO - Found 11 emails since 14-May-2025
+2025-05-14 13:55:56,940 - services/email_service - INFO - Processed batch 1/1
+2025-05-14 13:55:57,064 - services/email_service - INFO - Email fetch and processing completed
+2025-05-15 14:20:58,801 - services/email_service - INFO - Database initialized successfully
+2025-05-15 14:20:59,704 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:21:00,173 - services/email_service - INFO - Found 4 emails since 15-May-2025
+2025-05-15 14:21:01,169 - services/email_service - INFO - Processed batch 1/1
+2025-05-15 14:21:01,285 - services/email_service - INFO - Email fetch and processing completed
+2025-05-15 14:21:51,106 - services/email_service - INFO - Database initialized successfully
+2025-05-15 14:21:52,527 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:21:53,168 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:21:54,337 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-05-15 14:21:56,960 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:21:59,717 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:22:00,740 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:22:01,559 - services/email_service - INFO - Draft created successfully
+2025-05-15 14:22:02,584 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:22:03,402 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:22:04,701 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:22:05,506 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:22:06,062 - services/email_service - INFO - Draft created successfully
+2025-05-15 14:32:20,812 - services/email_service - INFO - Database initialized successfully
+2025-05-15 14:32:21,705 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:22,161 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:23,330 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-05-15 14:32:26,088 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:28,150 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:29,065 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:32:29,785 - services/email_service - INFO - Draft created successfully
+2025-05-15 14:32:30,607 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:31,014 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:31,729 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:33,062 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:32:33,879 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:32:34,430 - services/email_service - INFO - Draft created successfully
+2025-05-15 14:56:17,348 - services/email_service - INFO - Database initialized successfully
+2025-05-15 14:56:19,087 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:56:19,571 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:56:20,416 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-05-15 14:56:22,368 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:56:24,284 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:56:25,209 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:56:25,862 - services/email_service - INFO - Draft created successfully
+2025-05-15 14:56:26,668 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:56:27,383 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:56:28,614 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:56:29,426 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:56:30,040 - services/email_service - INFO - Draft created successfully
+2025-05-15 14:59:35,708 - services/email_service - INFO - Database initialized successfully
+2025-05-15 14:59:36,521 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:37,001 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:37,860 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-05-15 14:59:39,726 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:42,352 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:42,779 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:59:43,392 - services/email_service - INFO - Draft created successfully
+2025-05-15 14:59:44,162 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:44,704 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:45,400 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:46,553 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 14:59:47,422 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 14:59:48,028 - services/email_service - INFO - Draft created successfully
+2025-05-15 15:00:13,381 - services/email_service - INFO - Database initialized successfully
+2025-05-15 15:00:14,613 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:00:15,123 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:00:16,241 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-05-15 15:00:18,024 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:00:19,732 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:00:20,525 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 15:00:21,131 - services/email_service - INFO - Draft created successfully
+2025-05-15 15:00:21,914 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:00:22,742 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:00:23,825 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:00:24,724 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 15:00:25,385 - services/email_service - INFO - Draft created successfully
+2025-05-15 15:17:49,650 - services/email_service - INFO - Database initialized successfully
+2025-05-15 15:17:51,382 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:17:51,927 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:17:53,120 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-05-15 15:17:55,419 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:17:57,469 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:17:58,369 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 15:17:59,154 - services/email_service - INFO - Draft created successfully
+2025-05-15 15:17:59,967 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:18:00,650 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:18:01,858 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-15 15:18:02,800 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-05-15 15:18:03,431 - services/email_service - INFO - Draft created successfully

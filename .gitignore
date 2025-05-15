@@ -1,0 +1,5 @@
+services/email_service.log
+emails.db
+.env
+.env_example
+envbck

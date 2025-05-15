@@ -16,14 +16,14 @@ MODEL_NAME = "gpt-3.5-turbo"
 TEMPERATURE = 0.7
 
 # Vector database settings
-INDEX_NAME = "index-name"
+INDEX_NAME = os.getenv("INDEX_NAME")  # Default value if not set
 DIMENSION = 1024  # OpenAI embedding dimension
 METRIC = "cosine"
 
 # Email settings
 EMAIL_CONFIG = {
-    "address": os.getenv("EMAIL_ADDRESS", "test@email.com"),
-    "password": os.getenv("EMAIL_PASSWORD", "app password"),
+    "address": os.getenv("EMAIL_ADDRESS"),
+    "password": os.getenv("EMAIL_PASSWORD"),
     "imap_server": os.getenv("IMAP_SERVER", "imap.gmail.com"),
     "imap_port": int(os.getenv("IMAP_PORT", "993")),
     "use_ssl": os.getenv("USE_SSL", "True").lower() == "true"
@@ -51,7 +51,8 @@ def validate_config():
     required_vars = [
         "OPENAI_API_KEY",
         "PINECONE_API_KEY",
-        "PINECONE_ENVIRONMENT"
+        "PINECONE_ENVIRONMENT",
+        "INDEX_NAME"  # Adding INDEX_NAME to required variables
     ]
     
     missing_vars = [var for var in required_vars if not os.getenv(var)]
@@ -72,3 +73,22 @@ validate_config()
 # Email response settings
 MAX_RESPONSE_LENGTH = 1000
 RESPONSE_TONE = "professional" 
+RULES  = {
+    "emailResponseRules": [
+        "1. Keep the tone friendly and professional.",
+        "2. Keep the response concise and to the point.",
+        "3. Your name is Aparna Prasad, CEO of the company.",
+        "4. The company name is Acme Corp.",
+        "5. The company address is 123 Main St, Anytown, USA 12345.",
+        "6. The company phone number is 123-456-7890.",
+        "7. The company email is support@acme.com.",
+        "8. The company website is https://www.acme.com."
+    ],
+    "reactRules": [
+        "1. Do not respond to emails that are not relevant to the company.",
+        "2. If the email is not relevant, do not respond.",
+        "3. Do not summarize or describe your response. Just **call the function**.",
+        "4. Do not respond to no-reply or alert emails.",
+        "5. If its a thank you email, respond."
+    ]
+}

@@ -1,6 +1,5 @@
 from typing import List, Dict, Any, Optional
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_pinecone import PineconeVectorStore
 import sys
 import os
@@ -8,13 +7,12 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from config import (
-    CHUNK_SIZE,
-    CHUNK_OVERLAP,
     MAX_RETRIEVAL_DOCS,
     MODEL_NAME,
     TEMPERATURE,
     INDEX_NAME,
-    API_KEYS
+    API_KEYS, 
+    RULES
 )
 
 class EmailRAGAgent:
@@ -64,7 +62,7 @@ class EmailRAGAgent:
             ACT: generate_response(email="{email_content}", context="retrieved context here")
 
             Follow this loop:
-            1. THINK: Read the email carefully. Decide if a reply is necessary. Follow the rules {rules["reactRules"]} to decide if you need to respond. If a reply is needed, identify what information is needed. Do not make up any information. You have access to the company's knowledge base. 
+            1. THINK: Read the email carefully. Decide if a reply is necessary. Follow the rules {rules["reactRules"]} to decide if you need to respond. If a reply is needed, first ask yourself what information is needed to answer this question? You have access to the company's knowledge base. 
             2. ACT: Take an action based on your reasoning. For example:
             - If reply is not needed, decide it's a "no-reply."
             - If information is needed, call `search_knowledge_base(query: str)`.
@@ -148,33 +146,11 @@ class EmailRAGAgent:
             # Add a limit to prevent infinite loops
             if len(messages) > 10:
                 return "I apologize, but I'm having trouble generating a response. Please try rephrasing your email."
-    
-    def add_documents(self, documents: List[str]):
-        """Add documents to Pinecone."""
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=CHUNK_SIZE,
-            chunk_overlap=CHUNK_OVERLAP
-        )
-        texts = text_splitter.split_text("\n".join(documents))
-        
-        # Add documents to Pinecone
-        #PineconeVectorStore.from_documents(documents=texts, embedding=self.embeddings, index_name=INDEX_NAME)
-        self.vector_store.add_texts(texts)
 
 # Example usage
 if __name__ == "__main__":
     # Initialize the agent
     agent = EmailRAGAgent()
-    
-    # Add some example documents
-    documents = [
-        "Our company policy states that refunds must be requested within 30 days of purchase.",
-        "Technical support is available 24/7 through our help desk portal.",
-        "All premium features are included in the enterprise subscription plan.",
-        "To access premium features, users need to log in to their account and navigate to the 'Premium' section.",
-        "Refund requests should be submitted through the customer portal with the order number and reason for refund."
-    ]
-    # agent.add_documents(documents)
     
     # Example emails to test different scenarios
     emails = [
@@ -199,31 +175,11 @@ if __name__ == "__main__":
         Jane Smith
         """
     ]
-
-    rules = {
-    "emailResponseRules": [
-        "1. Keep the tone friendly and professional.",
-        "2. Keep the response concise and to the point.",
-        "3. Your name is Aparna Prasad, CEO of the company.",
-        "4. The company name is Acme Corp.",
-        "5. The company address is 123 Main St, Anytown, USA 12345.",
-        "6. The company phone number is 123-456-7890.",
-        "7. The company email is support@acme.com.",
-        "8. The company website is https://www.acme.com."
-    ],
-    "reactRules": [
-        "1. Do not respond to emails that are not relevant to the company.",
-        "2. If the email is not relevant, do not respond.",
-        "3. Do not summarize or describe your response. Just **call the function**.",
-        "4. Do not respond to no-reply or alert emails.",
-        "5. If its a thank you email, respond."
-    ]
-    }
     
     # Test responses
     for email in emails:
         print("\nProcessing email:")
         print(email)
         print("\nGenerated Response:")
-        print('D=Fianl email output:::', agent.generate_response(email, rules))
+        print('D=Fianl email output:::', agent.generate_response(email, RULES))
         print("-" * 80)

@@ -12,11 +12,11 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('email_service.log'),
+        logging.FileHandler('services/email_service.log'),
         logging.StreamHandler()
     ]
 )
-logger = logging.getLogger('email_service')
+logger = logging.getLogger('services/email_service')
 
 def clear_database():
     """Clear all content from the database tables."""

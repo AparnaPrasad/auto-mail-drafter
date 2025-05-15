@@ -8,6 +8,10 @@ from datetime import timedelta
 import re
 import sys
 import os
+from email.mime.text import MIMEText
+from email.utils import formatdate
+import time
+from typing import Dict
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import EMAIL_CONFIG, DATABASE_CONFIG, FETCH_CONFIG
@@ -17,11 +21,11 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('email_service.log'),
+        logging.FileHandler('services/email_service.log'),
         logging.StreamHandler()
     ]
 )
-logger = logging.getLogger('email_service')
+logger = logging.getLogger('services/email_service')
 
 class EmailService:
     def _remove_html_tags(self, text):
@@ -365,6 +369,51 @@ class EmailService:
             logger.warning(f"Error decoding header: {e}")
             return header
 
+    def create_draft_reply(self, original_message: Dict, response_text: str) -> None:
+        """
+        Create a draft reply using IMAP.
+        
+        Args:
+            original_message: Dictionary containing original email details
+            response_text: Generated response text
+        """
+        try:
+            # Connect to mail server if not already connected
+            mail = self.connect_to_mail_server()
+            
+            # Create message
+            msg = MIMEText(response_text)
+            msg['From'] = self.email_address
+            msg['To'] = original_message['sender']
+            msg['Subject'] = f"Re: {original_message['subject']}"
+            msg['Date'] = formatdate(localtime=True)
+            msg['In-Reply-To'] = original_message['message_id']
+            msg['References'] = original_message['message_id']
+            
+            # Select the Drafts folder
+            status, _ = mail.select('[Gmail]/Drafts')  # For Gmail. Adjust folder name if using different provider
+            if status != 'OK':
+                logger.error("Could not select Drafts folder")
+                return None
+                
+            # Append the message to Drafts folder with Draft flag
+            status, [msg_id] = mail.append('[Gmail]/Drafts', '\\Draft', imaplib.Time2Internaldate(time.time()), msg.as_bytes())
+            
+            if status == 'OK':
+                logger.info("Draft created successfully")
+                return msg_id
+            else:
+                logger.error(f"Failed to create draft: {status}")
+                return None
+                
+        except Exception as e:
+            logger.error(f"Error creating draft: {str(e)}")
+            return None
+        finally:
+            try:
+                mail.close()
+            except:
+                pass
 
 if __name__ == "__main__":
     import argparse
@@ -384,7 +433,7 @@ if __name__ == "__main__":
             since_date = datetime.datetime.strptime(args.since, "%Y-%m-%d")
         else:
             # Default: fetch emails from the last 24 hours
-            since_date = datetime.datetime.now() - timedelta(days=1)
+            since_date = datetime.datetime.now() - timedelta(minutes=6)
             
         print(f"Fetching emails since {since_date} from {args.mailbox}...")
         service.get_emails_since(since_date, args.mailbox)
