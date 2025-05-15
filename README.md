@@ -36,7 +36,7 @@
    Add API keys to .env file
 5. **Run the agent**
    ```bash
-   python agents/email-agent.py
+   python main.py
    ```
    
 ## ⚙️ Configuration
