@@ -3,3 +3,4 @@ emails.db
 .env
 .env_example
 envbck
+services/email_service.log
