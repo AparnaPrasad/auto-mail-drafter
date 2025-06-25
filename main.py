@@ -5,7 +5,7 @@ from typing import List, Dict, Optional
 
 # Import email-agent.py using importlib due to hyphen in filename
 import importlib.util
-spec = importlib.util.spec_from_file_location("email_agent", os.path.join("agents", "email-agent.py"))
+spec = importlib.util.spec_from_file_location("email_agent", os.path.join("agents", "email_agent.py"))
 email_agent = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(email_agent)
 EmailRAGAgent = email_agent.EmailRAGAgent

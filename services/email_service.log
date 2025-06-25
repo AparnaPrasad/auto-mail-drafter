@@ -99,3 +99,14 @@
 2025-05-15 15:18:01,858 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-15 15:18:02,800 - services/email_service - INFO - Successfully connected to imap.gmail.com
 2025-05-15 15:18:03,431 - services/email_service - INFO - Draft created successfully
+2025-06-25 15:50:51,137 - services/email_service - INFO - Database initialized successfully
+2025-06-25 15:50:52,137 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-25 15:50:53,218 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-25 15:50:53,634 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+2025-06-25 15:50:57,397 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-25 15:51:00,168 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-25 15:51:01,282 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-06-25 15:51:01,283 - services/email_service - ERROR - Error creating draft: 'tuple' object has no attribute 'encode'
+2025-06-25 15:51:02,582 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-25 15:51:03,573 - services/email_service - INFO - Successfully connected to imap.gmail.com
+2025-06-25 15:51:03,574 - services/email_service - ERROR - Error creating draft: 'tuple' object has no attribute 'encode'

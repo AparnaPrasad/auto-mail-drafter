@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-06-25T15:01:55.974775",
+  "total_tests": 1,
+  "overall_metrics": {
+    "avg_response_similarity": 0.3786407766990291,
+    "avg_email_agent_score": 0.4,
+    "avg_langgraph_agent_score": 1.0,
+    "avg_email_agent_time": 6.295789957046509,
+    "avg_langgraph_agent_time": 6.3817219734191895
+  },
+  "tool_usage_analysis": {
+    "email_agent_tool_usage_count": 0,
+    "langgraph_agent_tool_usage_count": 1,
+    "email_agent_correct_tool_usage": 0,
+    "langgraph_agent_correct_tool_usage": 1,
+    "email_agent_tool_usage_rate": 0.0,
+    "langgraph_agent_tool_usage_rate": 1.0,
+    "email_agent_correct_tool_usage_rate": 0.0,
+    "langgraph_agent_correct_tool_usage_rate": 1.0
+  },
+  "performance_comparison": {
+    "email_agent_wins": 0,
+    "langgraph_agent_wins": 0,
+    "ties": 1,
+    "winner": "Tie"
+  },
+  "detailed_results": [
+    {
+      "test_id": "PRICING001",
+      "category": "pricing_inquiry",
+      "description": "Pricing inquiry requiring knowledge base lookup",
+      "should_retrieve_info": true,
+      "email_agent_response": "Subject: Re: Premium Features Inquiry\n\nDear Customer,\n\nThank you for reaching out to us at Acme Corp.\n\nI wanted to inform you that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance with anything else, please don't hesitate to contact us.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. Our current pricing plans are as follows: - Basic Plan: $9.99/month - Standard Plan: $19.99/month - Enterprise Plan: $29.99/month All premium features are included in the Enterprise Plan. To access premium features, simply log in to your account and navigate to the 'Premium' section. Should you have any further questions or require assistance, feel free to reach out to our 24/7 technical support through our help desk portal. Best regards, Aparna Prasad CEO, Acme Corp. 123 Main St, Anytown, USA 12345 Phone: 123-456-7890 Email: support@acme.com Website: https://www.acme.com",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.3786407766990291,
+      "email_agent_time": 6.295789957046509,
+      "langgraph_agent_time": 6.3817219734191895,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "premium subscription pricing plans and features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    }
+  ]
+}

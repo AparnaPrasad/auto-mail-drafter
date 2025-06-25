@@ -1,4 +1,4 @@
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 import sys
@@ -46,8 +46,8 @@ class EmailRAGAgent:
             print(f"Error retrieving context: {e}")
             return None
     
-    def generate_response(self, email_content: str, rules: Dict[str, List[str]]) -> str:
-        """Generate a response using ReAct prompting."""
+    def generate_response(self, email_content: str, rules: Dict[str, List[str]]) -> Tuple[str, List[Dict]]:
+        """Generate a response using ReAct prompting and return both response and intermediate steps."""
         react_prompt = f"""
             You are an email response assistant using the ReAct (Reasoning + Acting) framework. 
             Your goal is to determine whether and how to respond to an incoming email using reasoning and available actions.
@@ -62,10 +62,10 @@ class EmailRAGAgent:
             ACT: generate_response(email="{email_content}", context="retrieved context here")
 
             Follow this loop:
-            1. THINK: Read the email carefully. Decide if a reply is necessary. Follow the rules {rules["reactRules"]} to decide if you need to respond. If a reply is needed, first ask yourself what information is needed to answer this question? You have access to the company's knowledge base. 
+            1. THINK: Read the email carefully. Decide if a reply is necessary. Follow the rules {rules["reactRules"]} to decide if you need to respond. If a reply is needed, first ask yourself if more information needed to answer this question? You have access to the company's knowledge base. 
             2. ACT: Take an action based on your reasoning. For example:
             - If reply is not needed, decide it's a "no-reply."
-            - If information is needed, call `search_knowledge_base(query: str)`.
+            - check if you need more information, if yes call `search_knowledge_base(query: str)`.
             3. OBSERVE: Review the results of your action.
             4. THINK: Decide if further action is needed (e.g., another search).
             5. ACT: Repeat search using search_knowledge_base(query: str) or proceed to step 6 that is response generation.
@@ -84,12 +84,11 @@ class EmailRAGAgent:
             # Get the next action from the model
             response = self.llm.invoke(messages)
             messages.append({"role": "assistant", "content": response.content})
-            print('LLM response:', response.content)
+           
             # Parse the model's response
             content = response.content.lower()
             
             if "search_knowledge_base" in content:
-                print('Searching knowledge base...')
                 # Extract the query from the action
                 query_start = content.find("search_knowledge_base(") + len("search_knowledge_base(")
                 query_end = content.find(")", query_start)
@@ -135,17 +134,17 @@ class EmailRAGAgent:
                 """
                 
                 final_response = self.llm.invoke(final_prompt)
-                return final_response.content
+                return final_response.content, messages
             
             elif "respond:" in content:
                 print('Responding...')
                 # Extract the response after "respond:"
                 response_text = content.split("respond:", 1)[1].strip()
-                return response_text
+                return response_text, messages
             
             # Add a limit to prevent infinite loops
             if len(messages) > 10:
-                return "I apologize, but I'm having trouble generating a response. Please try rephrasing your email."
+                return "I apologize, but I'm having trouble generating a response. Please try rephrasing your email.", messages
 
 # Example usage
 if __name__ == "__main__":
@@ -166,14 +165,14 @@ if __name__ == "__main__":
         """,
         
         # Email not requiring context
-        """
-        Hi there,
+        # """
+        # Hi there,
         
-        Thank you for your prompt response to my previous inquiry. I appreciate your help.
+        # Thank you for your prompt response to my previous inquiry. I appreciate your help.
         
-        Best regards,
-        Jane Smith
-        """
+        # Best regards,
+        # Jane Smith
+        # """
     ]
     
     # Test responses
@@ -181,5 +180,7 @@ if __name__ == "__main__":
         print("\nProcessing email:")
         print(email)
         print("\nGenerated Response:")
-        print('D=Fianl email output:::', agent.generate_response(email, RULES))
+        response, intermediate_steps = agent.generate_response(email, RULES)
+        print('Final email output:::', response)
+        print(f"Number of intermediate steps: {len(intermediate_steps)}")
         print("-" * 80)

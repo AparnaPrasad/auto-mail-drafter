@@ -92,3 +92,43 @@ RULES  = {
         "5. If its a thank you email, respond."
     ]
 }
+
+# Evaluation configuration
+EVALUATION_CONFIG = {
+    # LangSmith Configuration
+    "langsmith": {
+        "api_key": os.getenv("LANGSMITH_API_KEY"),
+        "tracing_v2": os.getenv("LANGCHAIN_TRACING_V2", "true"),
+        "endpoint": os.getenv("LANGCHAIN_ENDPOINT", "https://api.smith.langchain.com"),
+        "project": os.getenv("LANGCHAIN_PROJECT", "email-agent-evaluation")
+    },
+    
+    # Evaluation Settings
+    "timeout": int(os.getenv("EVALUATION_TIMEOUT", "300")),  # Timeout in seconds for each test case
+    "max_retries": int(os.getenv("MAX_RETRIES", "3")),  # Maximum retries for failed test cases
+    "save_detailed_logs": os.getenv("SAVE_DETAILED_LOGS", "true").lower() == "true",
+    "output_dir": os.getenv("OUTPUT_DIR", "./evaluation/reports"),
+    
+    # Test Configuration
+    "run_all_tests": os.getenv("RUN_ALL_TESTS", "true").lower() == "true",
+    "run_categories": os.getenv("RUN_CATEGORIES", "").split(",") if os.getenv("RUN_CATEGORIES") else [],
+    
+    # Scoring Weights
+    "scoring_weights": {
+        "tool_usage": float(os.getenv("TOOL_USAGE_WEIGHT", "0.4")),
+        "response_quality": float(os.getenv("RESPONSE_QUALITY_WEIGHT", "0.3")),
+        "processing_time": float(os.getenv("PROCESSING_TIME_WEIGHT", "0.1")),
+        "similarity": float(os.getenv("SIMILARITY_WEIGHT", "0.2"))
+    },
+    
+    # Test Case Categories
+    "test_categories": [
+        "pricing_inquiry",
+        "refund_request", 
+        "technical_support",
+        "thank_you",
+        "feature_inquiry",
+        "account_management",
+        "spam"
+    ]
+}

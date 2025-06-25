@@ -1,0 +1,315 @@
+{
+  "timestamp": "2025-06-25T15:09:22.582409",
+  "total_runs": 10,
+  "test_case": {
+    "id": "PRICING001",
+    "category": "pricing_inquiry",
+    "description": "Pricing inquiry requiring knowledge base lookup",
+    "should_retrieve_info": true
+  },
+  "overall_metrics": {
+    "avg_response_similarity": 0.33066916682139347,
+    "avg_email_agent_score": 0.39999999999999997,
+    "avg_langgraph_agent_score": 1.0,
+    "avg_email_agent_time": 4.800683879852295,
+    "avg_langgraph_agent_time": 4.682592725753784
+  },
+  "tool_usage_analysis": {
+    "email_agent_tool_usage_count": 0,
+    "langgraph_agent_tool_usage_count": 10,
+    "email_agent_correct_tool_usage": 0,
+    "langgraph_agent_correct_tool_usage": 10,
+    "email_agent_tool_usage_rate": 0.0,
+    "langgraph_agent_tool_usage_rate": 1.0,
+    "email_agent_correct_tool_usage_rate": 0.0,
+    "langgraph_agent_correct_tool_usage_rate": 1.0
+  },
+  "performance_comparison": {
+    "email_agent_wins": 0,
+    "langgraph_agent_wins": 10,
+    "ties": 0,
+    "winner": "LangGraph Agent"
+  },
+  "consistency_analysis": {
+    "tool_usage_consistency": {
+      "email_agent_tool_usage_rate": 0.0,
+      "langgraph_agent_tool_usage_rate": 1.0,
+      "email_agent_correct_tool_usage_rate": 0.0,
+      "langgraph_agent_correct_tool_usage_rate": 1.0
+    },
+    "score_consistency": {
+      "email_agent_score_std": 0.0,
+      "langgraph_agent_score_std": 0.0,
+      "email_agent_score_range": [
+        0.4,
+        0.4
+      ],
+      "langgraph_agent_score_range": [
+        1.0,
+        1.0
+      ]
+    },
+    "time_consistency": {
+      "email_agent_time_std": 0.6879076987104433,
+      "langgraph_agent_time_std": 0.7290824237620948,
+      "email_agent_time_range": [
+        3.887155055999756,
+        5.8724610805511475
+      ],
+      "langgraph_agent_time_range": [
+        3.9622159004211426,
+        6.2591469287872314
+      ]
+    },
+    "winner_consistency": {
+      "email_agent_wins": 0,
+      "langgraph_agent_wins": 10,
+      "ties": 0,
+      "email_agent_win_rate": 0.0,
+      "langgraph_agent_win_rate": 1.0,
+      "tie_rate": 0.0
+    }
+  },
+  "detailed_results": [
+    {
+      "run_number": 1,
+      "email_agent_response": "Subject: Re: Premium Features Inclusion in Enterprise Subscription Plan\n\nDear Customer,\n\nThank you for reaching out to Acme Corp support. \n\nI wanted to confirm that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance with anything else, feel free to let us know.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. The pricing plans for our premium subscription are as follows: Basic - $9.99/month, Standard - $19.99/month, Enterprise - $29.99/month. All premium features are included in the Enterprise plan. To access premium features, simply log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to reach out to our 24/7 technical support through our help desk portal. Best regards, Aparna Prasad CEO, Acme Corp. 123 Main St, Anytown, USA 12345 Phone: 123-456-7890 Email: support@acme.com Website: https://www.acme.com",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.44329896907216493,
+      "email_agent_time": 4.851634740829468,
+      "langgraph_agent_time": 6.2591469287872314,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "pricing plans premium subscription features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 2,
+      "email_agent_response": "Subject: Re: Premium Features in Enterprise Subscription Plan\n\nHello,\n\nThank you for reaching out to Acme Corp. I'm pleased to inform you that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance with anything else, feel free to contact us at support@acme.com or visit our website at https://www.acme.com.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. The current pricing plans are as follows: Basic - $9.99/month, Standard - $19.99/month, Enterprise - $29.99/month. All premium features are included in the Enterprise subscription plan. To access premium features, users can log in to their account and navigate to the 'Premium' section. If you have any further questions or need assistance, please feel free to contact our 24/7 technical support through our help desk portal. Best regards, Aparna Prasad CEO Acme Corp.",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.29411764705882354,
+      "email_agent_time": 5.8724610805511475,
+      "langgraph_agent_time": 5.18216609954834,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "premium subscription pricing plans features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 3,
+      "email_agent_response": "Subject: Re: Premium Features Included in Enterprise Subscription Plan\n\nHello,\n\nThank you for reaching out to Acme Corp.\n\nI wanted to confirm that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance with anything else, please feel free to let me know.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. The current pricing plans are as follows: Basic - $10/month, Standard - $20/month, Enterprise - $30/month. All premium features are included in the Enterprise plan. To access premium features, simply log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to reach out. Best regards, Aparna Prasad CEO, Acme Corp.",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.31868131868131866,
+      "email_agent_time": 3.887155055999756,
+      "langgraph_agent_time": 5.401883125305176,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "premium subscription pricing plans and features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 4,
+      "email_agent_response": "Dear Customer,\n\nThank you for reaching out to Acme Corp.\n\nI wanted to inform you that all premium features are indeed included in the enterprise subscription plan. If you have any further questions or need assistance with anything else, please don't hesitate to contact us at support@acme.com or visit our website at https://www.acme.com.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\n123-456-7890",
+      "langgraph_agent_response": "Hello Alex, Thank you for your interest in our premium subscription. We offer a single enterprise subscription plan that includes all premium features. The current pricing for our premium subscription is $99 per month. To access the premium features, simply log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to contact our 24/7 technical support through our help desk portal. Best regards, Aparna Prasad CEO Acme Corp.",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.2653061224489796,
+      "email_agent_time": 4.216981887817383,
+      "langgraph_agent_time": 4.363564729690552,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "pricing plans premium subscription features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 5,
+      "email_agent_response": "Subject: Re: Premium Features Inclusion in Enterprise Subscription Plan\n\nDear Customer,\n\nThank you for reaching out to Acme Corp. I wanted to confirm that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance with anything else, please don't hesitate to contact us.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. The current pricing plans are as follows: Basic - $10/month, Standard - $20/month, Enterprise - $30/month. All premium features are included in the Enterprise plan. For more details on the features included in each tier, please visit our website or contact our customer support team. If you have any further questions or need assistance, feel free to reach out. Best regards, Aparna Prasad CEO, Acme Corp. 123 Main St, Anytown, USA 12345 Phone: 123-456-7890 Email: support@acme.com Website: https://www.acme.com",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.44680851063829785,
+      "email_agent_time": 3.9802002906799316,
+      "langgraph_agent_time": 4.255263090133667,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "premium subscription pricing plans and features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 6,
+      "email_agent_response": "Subject: Re: Premium Features Included in Enterprise Subscription Plan\n\nDear Customer,\n\nThank you for reaching out to us. I wanted to confirm that all premium features are indeed included in the enterprise subscription plan at Acme Corp. We strive to provide the best value for our customers, and we are glad to offer you access to all premium features with your subscription.\n\nIf you have any further questions or need assistance with anything else, please don't hesitate to contact us. We are here to help.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. Currently, all premium features are included in our enterprise subscription plan. For pricing plans and detailed feature breakdown, please log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to reach out to our 24/7 technical support through our help desk portal. Best regards, Aparna Prasad CEO, Acme Corp.",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.33663366336633666,
+      "email_agent_time": 4.772386074066162,
+      "langgraph_agent_time": 4.618984937667847,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "current pricing plans and features included in each tier premium subscription"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 7,
+      "email_agent_response": "Subject: Re: Premium Features Inquiry\n\nDear Customer,\n\nThank you for reaching out to Acme Corp.\n\nI would like to inform you that all premium features are indeed included in the enterprise subscription plan. If you have any further questions or need assistance with anything else, please don't hesitate to contact us.\n\nBest Regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. The current pricing plans are as follows: Basic - $9.99/month, Pro - $19.99/month, and Enterprise - $29.99/month. All premium features are included in the Enterprise plan. To access premium features, please log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to reach out. Best regards, Aparna Prasad CEO, Acme Corp. 123 Main St, Anytown, USA 12345 123-456-7890 support@acme.com https://www.acme.com",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.41304347826086957,
+      "email_agent_time": 5.761210680007935,
+      "langgraph_agent_time": 4.617400169372559,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "premium subscription pricing plans and features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 8,
+      "email_agent_response": "Subject: Re: Premium Features Inquiry\n\nHello,\n\nThank you for reaching out to Acme Corp. I wanted to confirm that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance, please don't hesitate to let us know.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\n123-456-7890\nsupport@acme.com\nhttps://www.acme.com",
+      "langgraph_agent_response": "Hello Alex, Thank you for your interest in our premium subscription. The current pricing plans are as follows: Basic - $9.99/month, Pro - $19.99/month, and Enterprise - $29.99/month. All premium features are included in the Enterprise plan. To access premium features, simply log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to reach out to our 24/7 technical support through our help desk portal. Warm regards, Aparna Prasad CEO, Acme Corp",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.3010752688172043,
+      "email_agent_time": 4.80479884147644,
+      "langgraph_agent_time": 4.089252233505249,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "current pricing plans and features included in each tier premium subscription"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 9,
+      "email_agent_response": "Subject: Re: Premium Features Included in Enterprise Subscription Plan\n\nDear Customer,\n\nThank you for reaching out to Acme Corp. I'm pleased to inform you that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance with anything else, please don't hesitate to contact us.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. Our pricing plans are as follows: - Basic: $9.99/month - Standard: $19.99/month - Enterprise: $29.99/month Each tier includes all premium features, with Enterprise being the most comprehensive plan. To access the premium features, simply log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to reach out to our 24/7 technical support through our help desk portal. Best regards, Aparna Prasad CEO of Acme Corp",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.25471698113207547,
+      "email_agent_time": 4.541201114654541,
+      "langgraph_agent_time": 3.9622159004211426,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "premium subscription pricing plans and features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    },
+    {
+      "run_number": 10,
+      "email_agent_response": "Subject: Re: Premium Features Inquiry\n\nHello,\n\nThank you for reaching out to Acme Corp. I wanted to inform you that all premium features are indeed included in our enterprise subscription plan. If you have any further questions or need assistance with anything else, please don't hesitate to contact us.\n\nBest regards,\n\nAparna Prasad\nCEO, Acme Corp\n123 Main St, Anytown, USA 12345\nPhone: 123-456-7890\nEmail: support@acme.com\nWebsite: https://www.acme.com",
+      "langgraph_agent_response": "Dear Alex, Thank you for your interest in our premium subscription. Our current pricing plans are as follows: Basic Plan - $9.99/month, includes essential features. Pro Plan - $19.99/month, includes advanced features. Enterprise Plan - $29.99/month, includes all premium features. To access the premium features, simply log in to your account and navigate to the 'Premium' section. If you have any further questions or need assistance, feel free to contact our 24/7 technical support through our help desk portal. Best regards, Aparna Prasad CEO Acme Corp.",
+      "email_agent_score": 0.4,
+      "langgraph_agent_score": 1.0,
+      "response_similarity": 0.23300970873786409,
+      "email_agent_time": 5.3188090324401855,
+      "langgraph_agent_time": 4.076050043106079,
+      "tool_usage_comparison": {
+        "email_agent": {
+          "tool_used": false,
+          "search_queries": [],
+          "tool_usage_correct": false
+        },
+        "langgraph_agent": {
+          "tool_used": true,
+          "search_queries": [
+            "pricing plans premium subscription features"
+          ],
+          "tool_usage_correct": true
+        }
+      }
+    }
+  ]
+}

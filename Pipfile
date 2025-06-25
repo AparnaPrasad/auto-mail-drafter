@@ -16,6 +16,9 @@ langchain-pinecone = "*"
 google-api-python-client = "*"
 google-auth-httplib2 = "*"
 google-auth-oauthlib = "*"
+langgraph=">=0.0.20"
+pydantic=">=2.0.0"
+langsmith=">=0.0.50"
 
 [requires]
 python_version = "3" 
